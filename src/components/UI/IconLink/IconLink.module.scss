@@ -1,0 +1,21 @@
+@import "../../../styles/variables";
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    color: rgb(101, 101, 101);
+    :root[data-theme="light"] &:hover {
+        color: $light_heading_primary_color;
+    }
+    :root[data-theme="dark"] &:hover {
+        color: $dark_heading_primary_color;
+    }
+    &__img {
+        fill: currentColor;
+    }
+}

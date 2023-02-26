@@ -1,0 +1,7 @@
+@import "../../../../styles/mixins.scss";
+@import "../../../../styles/variables.scss";
+
+.icon_list {
+  display: flex;
+  gap: 0.4rem;
+}

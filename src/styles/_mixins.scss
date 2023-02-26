@@ -1,0 +1,30 @@
+@mixin heading($fz, $fw, $p, $m) {
+    font-family: "Inter-Bold";
+    font-weight: $fw;
+    font-size: $fz;
+    padding: $p;
+    margin: $m;
+}
+
+@mixin text($fz, $fw) {
+    font-family: "Inter-Regular";
+    font-weight: $fw;
+    font-size: $fz;
+}
+
+@mixin bd_line($t, $r, $b, $l, $w, $h) {
+    position: absolute;
+    content: "";
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+    height: $h;
+    width: $w;
+    :root[data-theme="dark"] & {
+        background-color: $light_text_secondary_color;
+    }
+    :root[data-theme="light"] & {
+        background-color: $dark_text_primary_color;
+    }
+}

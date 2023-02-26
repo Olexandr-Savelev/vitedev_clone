@@ -1,0 +1,38 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.link {
+    font-size: 16px;
+
+    &:hover {
+        transition: color 0.15s linear;
+        color: $textlink_primary_color !important;
+    }
+
+    &__header {
+        @include text(17px, 400);
+        letter-spacing: 0.1ch;
+        :root[data-theme="light"] & {
+            color: $light_heading_primary_color;
+        }
+        :root[data-theme="dark"] & {
+            color: $dark_heading_primary_color;
+        }
+    }
+    &__sidebar {
+        :root[data-theme="light"] & {
+            color: $light_text_secondary_color;
+        }
+        :root[data-theme="dark"] & {
+            color: $dark_text_secondary_color;
+        }
+    }
+    &__content_menu {
+        :root[data-theme="light"] & {
+            color: $light_text_secondary_color;
+        }
+        :root[data-theme="dark"] & {
+            color: $dark_text_secondary_color;
+        }
+    }
+}

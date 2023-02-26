@@ -1,0 +1,62 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/_mixins.scss";
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sidebar-w;
+    flex: 1 0 auto;
+    z-index: 2;
+    height: 100vh;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+    overflow-y: auto;
+
+    @media (min-width: 1440px) {
+        padding-left: max(32px, calc((100% - (1440px - 64px)) / 2));
+        width: calc((100% - (1440px - 64px)) / 2 + $sidebar-w - 32px);
+    }
+
+    &__logo {
+        height: $header-h;
+        width: 100px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.2rem;
+        padding-top: 1rem;
+
+        &_title {
+            @include heading(16px, _, 0, 0);
+            :root[data-theme="light"] {
+                color: $light_heading_primary_color;
+            }
+            :root[data-theme="dark"] {
+                color: rgb(236, 235, 235);
+            }
+        }
+
+        &::before {
+            @include bd_line(0, _, _, 0, 100%, 0.5px);
+        }
+    }
+
+    &__item {
+        // padding-left: 0.3rem;
+    }
+
+    :root[data-theme="light"] & {
+        background-color: $light_secondary_bg;
+    }
+
+    :root[data-theme="dark"] & {
+        background-color: $dark_secondary_bg;
+    }
+}

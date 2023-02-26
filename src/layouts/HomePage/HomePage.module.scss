@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.page {
+    &__heading {
+        position: relative;
+        @include heading(2.5rem, 700, 0, 1.5rem 0 0 0);
+    }
+}
+
+.content_item {
+    position: relative;
+    padding-top: 1.5rem;
+    margin-top: 2.5rem;
+
+    &::before {
+        @include bd_line(0, _, _, 0, 100%, 0.5px);
+    }
+    &__heading {
+        @include heading(24px, 700, 0, 0 0 1rem 0);
+    }
+    &__text {
+        @include text(17px, 500);
+    }
+}

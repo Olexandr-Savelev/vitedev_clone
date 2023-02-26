@@ -1,0 +1,29 @@
+@import "../../../styles/variables.scss";
+
+.side_menu {
+    position: fixed;
+    top: $header-h;
+    right: 0;
+    flex-grow: 1;
+    width: $side_menu-w;
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+
+    @media (min-width: 1440px) {
+        padding-right: max(32px, calc((100% - (1440px - 64px)) / 2));
+        width: calc((100% - (1440px - 64px)) / 2 + $side_menu-w - 32px);
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0.5px;
+        height: 100%;
+        background-color: $light_text_secondary_color;
+        :root[data-theme="light"] & {
+            background-color: $dark_text_primary_color;
+        }
+    }
+}

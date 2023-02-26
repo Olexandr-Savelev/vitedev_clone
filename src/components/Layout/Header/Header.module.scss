@@ -1,0 +1,54 @@
+@import "../../../styles/variables.scss";
+
+.header {
+    position: fixed;
+    top: 0;
+    height: $header-h;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+    clip-path: inset(-12px 0px -12px 0px);
+    padding-left: $sidebar-w;
+
+    &__container {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    &__nav {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    &[class*="shadow"] {
+        -webkit-box-shadow: 0 4px 12px rgba(57, 63, 72, 0.4);
+        -moz-box-shadow: 0 4px 12px rgba(57, 63, 72, 0.4);
+        box-shadow: 2px 4px 12px rgba(57, 63, 72, 0.4);
+    }
+
+    :root[data-theme="light"] & {
+        background-color: $light_primary_bg;
+    }
+
+    :root[data-theme="dark"] & {
+        background-color: $dark_primary_bg;
+    }
+}

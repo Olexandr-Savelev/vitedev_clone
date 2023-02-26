@@ -1,0 +1,46 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.btn {
+    position: relative;
+    width: 44px;
+    height: 22px;
+    border-radius: 50px;
+    border: 1px solid $light_text_primary_color;
+    &::before {
+        @include bd_line(0, _, _, -1rem, 1px, 100%);
+    }
+    &::after {
+        @include bd_line(0, -1rem, _, _, 1px, 100%);
+    }
+    :root[data-theme="dark"] & {
+        background-color: $light_text_secondary_color;
+    }
+    :root[data-theme="light"] & {
+        background-color: $light_primary_bg;
+    }
+
+    &__circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0px;
+        left: 1px;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        transition: transform 0.2s ease-in-out;
+        & > img {
+            height: 16px;
+            width: 16px;
+        }
+        :root[data-theme="dark"] & {
+            background-color: black;
+            transform: translateX(100%);
+        }
+        :root[data-theme="light"] & {
+            background-color: $light_primary_bg;
+        }
+    }
+}
