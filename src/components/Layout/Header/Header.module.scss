@@ -8,13 +8,11 @@
     transform: translateX(-50%);
     z-index: 1;
     display: flex;
-    flex-grow: 1;
     align-items: center;
     margin: 0 auto;
     width: 100%;
     max-width: 1440px;
     box-sizing: border-box;
-    overflow: hidden;
     transition: box-shadow 0.3s ease-in-out;
     clip-path: inset(-12px 0px -12px 0px);
     padding-left: $sidebar-w;

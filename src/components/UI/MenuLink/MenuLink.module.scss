@@ -6,12 +6,14 @@
 
     &:hover {
         transition: color 0.15s linear;
-        color: $textlink_primary_color !important;
+        color: $app_primary_color !important;
     }
 
     &__header {
-        @include text(17px, 400);
-        letter-spacing: 0.1ch;
+        @include text(15px, 400);
+        &:hover {
+            color: $app_secondary_color !important;
+        }
         :root[data-theme="light"] & {
             color: $light_heading_primary_color;
         }
@@ -33,6 +35,12 @@
         }
         :root[data-theme="dark"] & {
             color: $dark_text_secondary_color;
+        }
+        :root[data-theme="light"] &:hover {
+            color: white;
+        }
+        :root[data-theme="dark"] &:hover {
+            color: black;
         }
     }
 }

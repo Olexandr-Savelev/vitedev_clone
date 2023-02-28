@@ -6,6 +6,7 @@ import MenuLink from "../../UI/MenuLink/MenuLink";
 import cn from "classnames";
 import styles from "./Header.module.scss";
 import IconList from "./IconList/IconList";
+import SearchButton from "./SearchButton/SearchButton";
 
 const links = ["One", "Two", "Thee", "Four"];
 
@@ -36,6 +37,7 @@ const Header: FC = () => {
       })}
     >
       <div className={styles.header__container}>
+        <SearchButton />
         <nav className={styles.header__nav}>
           {links.map((link) => (
             <MenuLink

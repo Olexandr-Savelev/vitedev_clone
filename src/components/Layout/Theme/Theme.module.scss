@@ -6,7 +6,9 @@
     width: 44px;
     height: 22px;
     border-radius: 50px;
-    border: 1px solid $light_text_primary_color;
+    cursor: pointer;
+    border: 1px solid rgb(156, 155, 155);
+    transition: border-color 0.2s ease-in-out;
     &::before {
         @include bd_line(0, _, _, -1rem, 1px, 100%);
     }
@@ -16,8 +18,14 @@
     :root[data-theme="dark"] & {
         background-color: $light_text_secondary_color;
     }
+    :root[data-theme="dark"] &:hover {
+        border-color: $dark_heading_primary_color;
+    }
     :root[data-theme="light"] & {
         background-color: $light_primary_bg;
+    }
+    :root[data-theme="light"] &:hover {
+        border-color: black;
     }
 
     &__circle {

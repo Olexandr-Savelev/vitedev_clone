@@ -2,8 +2,8 @@ import { FC, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { setTheme } from "../../../store/slices/themeSlice";
 import styles from "./Theme.module.scss";
-import sun from "./icons/sun.svg";
-import moon from "./icons/moon.svg";
+import sun from "/icons/sun.svg";
+import moon from "/icons/moon.svg";
 
 const Theme: FC = () => {
   const theme = useAppSelector((state) => state.theme);
