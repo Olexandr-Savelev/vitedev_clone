@@ -9,14 +9,20 @@
 
     &__main_container {
         display: flex;
-        padding: $header-h 0 0 $sidebar-w;
+        padding: $header-h 0 0 0;
         z-index: 1;
+        @media (min-width: $md) {
+            padding: $header-h 0 0 $sidebar-w;
+        }
         @media (min-width: $slg) {
             padding: $header-h $side_menu-w 0 $sidebar-w;
         }
     }
 
     &__main_content {
-        padding: 0 3.5rem 0 3.5rem;
+        padding: 0 1rem 0 1rem;
+        @media (min-width: $md) {
+            padding: 0 3.5rem 0 3.5rem;
+        }
     }
 }

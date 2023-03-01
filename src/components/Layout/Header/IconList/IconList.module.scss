@@ -2,11 +2,17 @@
 @import "../../../../styles/variables.scss";
 
 .icon_list {
+  width: 80%;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.8rem;
   &::before {
     @include bd_line(-1rem, _, _, 0, 100%, 1px);
+  }
+  @media (min-width: $sm) {
+    width: auto;
   }
   @media (min-width: $slg) {
     gap: 0.4rem;

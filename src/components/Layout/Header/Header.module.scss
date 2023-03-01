@@ -16,7 +16,10 @@
     box-sizing: border-box;
     transition: box-shadow 0.3s ease-in-out;
     clip-path: inset(-12px 0px -12px 0px);
-    padding-left: $sidebar-w;
+
+    @media (min-width: $md) {
+        padding-left: $sidebar-w;
+    }
 
     &__container {
         display: flex;
@@ -31,10 +34,13 @@
     }
 
     &__nav {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        gap: 0.7rem;
+        display: none;
+        @media (min-width: $sm) {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            gap: 0.7rem;
+        }
     }
 
     &__submenu {

@@ -12,8 +12,13 @@
     padding-left: 2.5rem;
     padding-right: 1rem;
     overflow-y: auto;
+    transform: translateX(-100%);
 
-    @media (min-width: 1440px) {
+    @media (min-width: $md) {
+        transform: translateX(0);
+    }
+
+    @media (min-width: $full) {
         padding-left: max(32px, calc((100% - (1440px - 64px)) / 2));
         width: calc((100% - (1440px - 64px)) / 2 + $sidebar-w - 32px);
     }
@@ -42,16 +47,10 @@
                 color: rgb(236, 235, 235);
             }
         }
-
         &::before {
             @include bd_line(0, _, _, 0, 100%, 0.5px);
         }
     }
-
-    &__item {
-        // padding-left: 0.3rem;
-    }
-
     :root[data-theme="light"] & {
         background-color: $light_secondary_bg;
     }

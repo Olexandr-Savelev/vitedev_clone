@@ -1,28 +1,52 @@
 @import "../../../../../styles/variables.scss";
 
 .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
     position: fixed;
+    top: $header-h;
+    left: 0;
+    height: calc(100vh - $header-h);
+    width: 100vw;
     z-index: 1;
-    top: 50px;
-    right: 10px;
-    padding: 1rem 2rem 0.5rem 2rem;
-    border-radius: 5px;
-    box-shadow: 2px 4px 12px rgba(57, 63, 72, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
     :root[data-theme="light"] & {
         background-color: $light_secondary_bg;
     }
     :root[data-theme="dark"] & {
         background-color: $dark_secondary_bg;
     }
-    &__appearence {
+    @media (min-width: $sm) {
+        height: auto;
+        width: auto;
+        gap: 2rem;
+        top: 50px;
+        left: auto;
+        right: 10px;
+        padding: 1rem 2rem 0.5rem 2rem;
+        border-radius: 5px;
+        box-shadow: 2px 4px 12px rgba(57, 63, 72, 0.4);
+    }
+    &__nav {
+        width: 80%;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        @media (min-width: $sm) {
+            display: none;
+        }
+    }
+    &__appearence {
+        width: 80%;
+        display: flex;
+        justify-content: center;
         align-items: center;
         gap: 0.3rem;
+        margin-bottom: 1rem;
         font-size: 14px;
         :root[data-theme="light"] & {
             color: $light_text_secondary_color;
@@ -30,13 +54,53 @@
         :root[data-theme="dark"] & {
             color: $dark_text_secondary_color;
         }
-    }
-    & > li {
-        min-width: 140px;
-    }
-    & a {
-        display: block;
-        width: 100%;
-        text-align: center;
+        @media (min-width: $sm) {
+            width: auto;
+            margin-bottom: 0;
+        }
     }
 }
+
+// .menu {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 2rem;
+//     position: fixed;
+//     z-index: 1;
+//     top: 50px;
+//     right: 10px;
+//     padding: 1rem 2rem 0.5rem 2rem;
+//     border-radius: 5px;
+//     box-shadow: 2px 4px 12px rgba(57, 63, 72, 0.4);
+//     :root[data-theme="light"] & {
+//         background-color: $light_secondary_bg;
+//     }
+//     :root[data-theme="dark"] & {
+//         background-color: $dark_secondary_bg;
+//     }
+//     &__nav {
+//         display: none;
+//     }
+//     &__appearence {
+//         display: flex;
+//         align-items: center;
+//         gap: 0.3rem;
+//         font-size: 14px;
+//         :root[data-theme="light"] & {
+//             color: $light_text_secondary_color;
+//         }
+//         :root[data-theme="dark"] & {
+//             color: $dark_text_secondary_color;
+//         }
+//     }
+//     & > li {
+//         min-width: 140px;
+//     }
+//     & a {
+//         display: block;
+//         width: 100%;
+//         text-align: center;
+//     }
+// }
