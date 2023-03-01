@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Scrollbars from "react-custom-scrollbars-2";
 import { mockLinks } from "../../../mockData";
 import MenuLink from "../../UI/MenuLink/MenuLink";
 import styles from "./Sidebar.module.scss";

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import ThemeReducer from "./slices/themeSlice";
+import BreadcrumbReducer from "./slices/breadcrumbSlice";
 
 const store = configureStore({
   reducer: {
     theme: ThemeReducer,
+    breadcrumbs: BreadcrumbReducer,
   },
 });
 

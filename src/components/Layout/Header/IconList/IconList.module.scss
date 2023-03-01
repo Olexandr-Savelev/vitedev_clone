@@ -2,6 +2,16 @@
 @import "../../../../styles/variables.scss";
 
 .icon_list {
+  position: relative;
   display: flex;
-  gap: 0.4rem;
+  gap: 0.8rem;
+  &::before {
+    @include bd_line(-1rem, _, _, 0, 100%, 1px);
+  }
+  @media (min-width: $slg) {
+    gap: 0.4rem;
+    &::before {
+      @include bd_line(_, _, _, _, _, _);
+    }
+  }
 }

@@ -9,7 +9,11 @@
 
     &__main_container {
         display: flex;
-        padding: $header-h $side_menu-w 0 $sidebar-w;
+        padding: $header-h 0 0 $sidebar-w;
+        z-index: 1;
+        @media (min-width: $slg) {
+            padding: $header-h $side_menu-w 0 $sidebar-w;
+        }
     }
 
     &__main_content {

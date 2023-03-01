@@ -1,4 +1,5 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .header {
     position: fixed;
@@ -34,6 +35,24 @@
         height: 100%;
         align-items: center;
         gap: 0.7rem;
+    }
+
+    &__submenu {
+        position: relative;
+        display: none;
+        align-items: center;
+        gap: 2rem;
+        & > button::before {
+            @include bd_line(0, _, _, -1rem, 1px, 100%);
+            pointer-events: none;
+        }
+        & > button::after {
+            @include bd_line(0, -1rem, _, _, 1px, 100%);
+            pointer-events: none;
+        }
+        @media (min-width: $slg) {
+            display: flex;
+        }
     }
 
     &[class*="shadow"] {

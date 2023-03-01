@@ -1,6 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .side_menu {
+    display: none;
     position: fixed;
     top: $header-h;
     right: 0;
@@ -8,6 +9,9 @@
     width: $side_menu-w;
     margin-top: 1.5rem;
     padding-left: 1.5rem;
+    @media (min-width: $slg) {
+        display: block;
+    }
 
     @media (min-width: 1440px) {
         padding-right: max(32px, calc((100% - (1440px - 64px)) / 2));

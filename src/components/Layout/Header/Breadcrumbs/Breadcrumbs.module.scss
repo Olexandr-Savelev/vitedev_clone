@@ -1,0 +1,57 @@
+@import "../../../../styles/variables.scss";
+
+.breadcrumbs {
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    :root[data-theme="light"] &:hover {
+        background-color: $light_secondary_bg;
+    }
+    :root[data-theme="dark"] &:hover {
+        background-color: $dark_secondary_bg;
+    }
+    @media (min-width: $slg) {
+        display: none;
+    }
+
+    &__dots {
+        position: relative;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        :root[data-theme="light"] & {
+            background-color: $light_heading_primary_color;
+        }
+        :root[data-theme="dark"] & {
+            background-color: $dark_heading_primary_color;
+        }
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            height: 3px;
+            width: 3px;
+            border-radius: 50%;
+            :root[data-theme="light"] & {
+                background-color: $light_heading_primary_color;
+            }
+            :root[data-theme="dark"] & {
+                background-color: $dark_heading_primary_color;
+            }
+        }
+        &::before {
+            left: 0.5rem;
+        }
+        &::after {
+            right: 0.5rem;
+        }
+    }
+}

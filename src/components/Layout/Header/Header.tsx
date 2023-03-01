@@ -2,11 +2,12 @@ import { FC, useEffect, useState } from "react";
 
 import Theme from "../Theme/Theme";
 import MenuLink from "../../UI/MenuLink/MenuLink";
+import IconList from "./IconList/IconList";
+import SearchButton from "./SearchButton/SearchButton";
+import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
 
 import cn from "classnames";
 import styles from "./Header.module.scss";
-import IconList from "./IconList/IconList";
-import SearchButton from "./SearchButton/SearchButton";
 
 const links = ["One", "Two", "Thee", "Four"];
 
@@ -48,8 +49,12 @@ const Header: FC = () => {
             </MenuLink>
           ))}
         </nav>
-        <Theme />
-        <IconList />
+        <div className={styles.header__submenu}>
+          <Theme />
+          <IconList />
+        </div>
+
+        <Breadcrumbs />
       </div>
     </header>
   );

@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar/Sidebar";
 
 import styles from "./Layout.module.scss";
 import SideMenu from "./SideMenu/SideMenu";
-import IconList from "./Header/IconList/IconList";
+import BreadcrumbsMenu from "./Header/Breadcrumbs/BreadcrumbsMenu/BreadcrumbsMenu";
 
 interface Layout {
   children: ReactNode;
@@ -16,6 +16,7 @@ const Layout: FC<Layout> = ({ children }) => {
     <>
       <div className={styles.layout}>
         <Header />
+        <BreadcrumbsMenu />
         <Sidebar />
         <div className={styles.layout__content}>
           <div className={styles.layout__main_container}>

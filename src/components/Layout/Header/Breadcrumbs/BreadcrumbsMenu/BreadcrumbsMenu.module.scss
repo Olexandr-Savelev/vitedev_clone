@@ -1,0 +1,42 @@
+@import "../../../../../styles/variables.scss";
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    right: 10px;
+    padding: 1rem 2rem 0.5rem 2rem;
+    border-radius: 5px;
+    box-shadow: 2px 4px 12px rgba(57, 63, 72, 0.4);
+    :root[data-theme="light"] & {
+        background-color: $light_secondary_bg;
+    }
+    :root[data-theme="dark"] & {
+        background-color: $dark_secondary_bg;
+    }
+    &__appearence {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-size: 14px;
+        :root[data-theme="light"] & {
+            color: $light_text_secondary_color;
+        }
+        :root[data-theme="dark"] & {
+            color: $dark_text_secondary_color;
+        }
+    }
+    & > li {
+        min-width: 140px;
+    }
+    & a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}

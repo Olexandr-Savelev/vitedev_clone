@@ -9,12 +9,12 @@
     cursor: pointer;
     border: 1px solid rgb(156, 155, 155);
     transition: border-color 0.2s ease-in-out;
-    &::before {
-        @include bd_line(0, _, _, -1rem, 1px, 100%);
-    }
-    &::after {
-        @include bd_line(0, -1rem, _, _, 1px, 100%);
-    }
+    // &::before {
+    //     @include bd_line(0, _, _, -1rem, 1px, 100%);
+    // }
+    // &::after {
+    //     @include bd_line(0, -1rem, _, _, 1px, 100%);
+    // }
     :root[data-theme="dark"] & {
         background-color: $light_text_secondary_color;
     }
