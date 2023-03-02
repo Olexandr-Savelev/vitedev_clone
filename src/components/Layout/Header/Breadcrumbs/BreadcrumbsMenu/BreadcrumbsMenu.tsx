@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useAppSelector } from "../../../../../store/hooks";
-import MenuLink from "../../../../UI/MenuLink/MenuLink";
 
 import Theme from "../../../Theme/Theme";
 import IconList from "../../IconList/IconList";
+import MenuLink from "../../../../UI/MenuLink/MenuLink";
 
 import styles from "./BreadcrumbsMenu.module.scss";
 
@@ -11,6 +11,16 @@ const links = ["One", "Two", "Thee", "Four"];
 
 const BreadcrumbsMenu: FC = () => {
   const breadcrumbs = useAppSelector((state) => state.breadcrumbs);
+
+  useEffect(() => {
+    if (window.innerWidth < 480 && breadcrumbs) {
+      document.body.style.height = "100vh";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.height = "auto";
+      document.body.style.overflow = "auto";
+    }
+  }, [breadcrumbs]);
 
   if (!breadcrumbs) return null;
 

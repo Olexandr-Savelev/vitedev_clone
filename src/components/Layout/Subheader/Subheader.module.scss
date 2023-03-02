@@ -1,0 +1,49 @@
+@import "../../../styles/variables.scss";
+
+.subheader {
+    display: flex;
+    position: sticky;
+    height: $subheader-h;
+    top: 0;
+    z-index: 2;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+    border-width: 1px;
+    border-style: solid;
+    :root[data-theme="dark"] & {
+        border-color: $light_text_secondary_color;
+    }
+    :root[data-theme="light"] & {
+        border-color: $dark_text_primary_color;
+    }
+
+    @media (min-width: $sm) {
+        position: fixed;
+        width: 100%;
+        top: $header-h;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    @media (min-width: $md) {
+        display: none;
+    }
+
+    :root[data-theme="light"] & {
+        background-color: $light_primary_bg;
+        color: $light_text_primary_color;
+    }
+
+    :root[data-theme="dark"] & {
+        background-color: $dark_primary_bg;
+        color: $dark_text_primary_color;
+    }
+    & > button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: inherit;
+    }
+}
